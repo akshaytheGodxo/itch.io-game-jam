@@ -1,0 +1,57 @@
+﻿  Enemy.cpp
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,62): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,62): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,62): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,62): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,62): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,50): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,50): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,50): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,50): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(21,50): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,106): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,106): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,106): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,106): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,106): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,94): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,94): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,94): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,94): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,94): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,79): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,79): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,79): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,79): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,79): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,61): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,61): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,61): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,61): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(33,61): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,106): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,106): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,106): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,106): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,106): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,94): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,94): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,94): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,94): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,94): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,79): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,79): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,79): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,79): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,79): warning C4244:         ]
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,61): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,61): warning C4244:         with
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,61): warning C4244:         [
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,61): warning C4244:             T=int
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Enemy.cpp(45,61): warning C4244:         ]
+  Game.cpp
+C:\Users\aksha\source\repos\Space Shooter\Space Shooter\Player.h(60,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Game.cpp')
+  
+  Generating Code...
+  Space Shooter.vcxproj -> C:\Users\aksha\source\repos\Space Shooter\x64\Debug\Space Shooter.exe
