@@ -15,8 +15,13 @@
 
 
 
+#define NPC_1_IDLE "assets/girl_pack/Converted_Vampire/Idle.png"
+
+
 #define ENEMY_IDLE_1 "assets/gangster/Gangsters_1/Idle.png"
 #define ENEMY_IDLE_2 "assets/gangster/Gangsters_1/Idle_2.png"
 #define ENEMY_DEADTH "assets/gangster/Gangsters_1/Dead.png"
 
 #define DISPLAY_FONT "assets/fonts/playwrite/PlaywriteGBS-VariableFont_wght.ttf"
+
+#define INVENTORY_FONT "assets/fonts/press-start-2p-font/PressStart2P-vaV7.ttf"

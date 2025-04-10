@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include "Item.h"
 class Player {
 public:
     Player(char currentState);
@@ -17,13 +17,23 @@ public:
     void handleAttack();
     void handleBlock();
     void handleComboAttack();
+    void drawHealthBar(sf::RenderWindow& window);
+
+
+    // inventory management
+
+	void addItem(const Item& item);
+	void removeItem(const std::string& itemName);
+    void toggleInventory();
+    const std::vector<Item>& getInventory() const;
+
     sf::Sprite& getSprite();
     bool isGrounded = true;
 
     bool isAttacking = false;
 
 private:
-
+    sf::Font font;
     sf::Texture walkTexture;
     sf::Texture idleTexture;
     sf::Texture jumpTexture;
@@ -55,7 +65,13 @@ private:
 	float deltaTime = 0.2f;
 	float velocityY = 0.0f; 
     bool jumpInitiated = false;
-    
-    int playerHealth = 200;
+    int maxHealth = 100;
+    int currentHealth = 80;
     int attackFrameDuration = 0.5f;
+
+
+    // inventory
+
+    std::vector<Item> inventory;
+    bool showInventory = false;
 };

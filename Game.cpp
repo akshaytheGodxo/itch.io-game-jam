@@ -84,6 +84,17 @@ void Game::processEvents() {
 		}
 		
 
+		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::I) {
+			player.toggleInventory();
+			player.addItem(Item("Sword", "A sharp blade", 10));
+		}
+
+		if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::E) {
+			if (player.getSprite().getGlobalBounds().intersects(npc.getBounds())) {
+				npc.interact();
+			}
+		}
+
 	}
 }
 
@@ -112,20 +123,22 @@ void Game::handlePlayerAttack() {
 
 	}
 
-	if (player.isAttacking = true && playerAttackBox.intersects(enemyBox) ){
+	if (player.isAttacking && enemy.isAlive && playerAttackBox.intersects(enemyBox))
+	{
 		enemy.takeDamage(10); // Example damage value
 		std::cout << "Player attacked enemy!" << std::endl;
 	}
 
 
-	if (enemy.getHealth() <= 0) {
+	if (enemy.getHealth() <= 0 && !enemyDeadTriggered) {
 		enemy.isAlive = false;
-		characterState[1] = 'k';
+		enemyDeadTriggered = true;
 	}
 }
 void Game::update() {
 	player.update(characterState[1]);
-	enemy.update(characterState[1]);
+	enemy.update();
+	npc.update();
 
 	
 
@@ -140,5 +153,6 @@ void Game::render() {
 	window.draw(backgroundSprite);
 	player.draw(window);
 	enemy.draw(window);
+	npc.draw(window);
 	window.display();
 }

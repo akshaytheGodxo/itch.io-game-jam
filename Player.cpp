@@ -23,6 +23,10 @@ Player::Player(char currentState) : frameHeight(128), frameWidth(128), character
 		throw std::runtime_error("Failed to load sprite sheet");
 	}
 
+	if (!font.loadFromFile(DISPLAY_FONT)) {
+		throw std::runtime_error("Failed to load font");
+	}
+
 	sprite.setTexture(idleTexture);
 	sprite.setTextureRect(sf::IntRect(0, 0, frameWidth, frameHeight));
 	sprite.setOrigin(frameWidth / 2, frameHeight / 2);
@@ -177,6 +181,55 @@ void Player::update(char currentState) {
 }
 
 
+
+void Player::drawHealthBar(sf::RenderWindow& window) {
+	float barWidth = 100.0f;
+	float barHeight = 10.0f;
+	float healthPercentage = static_cast<float>(currentHealth) / maxHealth;
+
+	sf::RectangleShape backgroundBar(sf::Vector2f(barWidth, barHeight));
+	backgroundBar.setFillColor(sf::Color::Red); // Red background
+	backgroundBar.setPosition(20, 20);
+
+	sf::RectangleShape healthBar(sf::Vector2f(barWidth * healthPercentage, barHeight));
+	healthBar.setFillColor(sf::Color::Green); // Green health
+	healthBar.setPosition(20, 20);
+
+	window.draw(backgroundBar);
+	window.draw(healthBar);
+}
+
+
+void Player::addItem(const Item& item) {
+	for (auto& i : inventory) {
+		if (i.name == item.name) {
+			i.quantity++;
+			return;
+		}
+	}
+	inventory.push_back(item);
+}
+
+void Player::removeItem(const std::string& itemName) {
+	for (auto it = inventory.begin(); it != inventory.end(); ++it) {
+		if (it->name == itemName) {
+			if (--(it->quantity) <= 0) {
+				inventory.erase(it);
+			}
+			return;
+		}
+	}
+}
+
+void Player::toggleInventory() {
+	showInventory = !showInventory;
+}
+
+const std::vector<Item>& Player::getInventory() const {
+	return inventory;
+}
+
+
 sf::Sprite& Player::getSprite() {
 	return sprite;
 }
@@ -184,4 +237,30 @@ sf::Sprite& Player::getSprite() {
 
 void Player::draw(sf::RenderWindow& window) {
 	window.draw(sprite);
+
+	drawHealthBar(window);
+
+
+	// inventory toggle
+	if (showInventory) {
+		sf::RectangleShape invBox;
+		invBox.setSize(sf::Vector2f(400, 300));
+		invBox.setFillColor(sf::Color(50, 50, 50, 200));
+		invBox.setPosition(50, 50);
+		window.draw(invBox);
+
+		sf::Text itemText;
+		itemText.setFont(font); // already loaded
+		itemText.setCharacterSize(18);
+		itemText.setFillColor(sf::Color::White);
+
+		int offset = 0;
+		for (const auto& item : inventory) {
+			itemText.setString(item.name + " x" + std::to_string(item.quantity));
+			itemText.setPosition(60, 60 + offset);
+			window.draw(itemText);
+			offset += 30;
+		}
+	}
+
 }

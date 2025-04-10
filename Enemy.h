@@ -5,7 +5,7 @@ class Enemy {
 public:
     Enemy(char currentState);
 
-    void update(char currentState);
+    void update();
     void draw(sf::RenderWindow& window);
     void handleIdle();
     void handleDead();
@@ -25,7 +25,14 @@ private:
     sf::Text message;
     float frameWidth = 128.f, frameHeight = 128.f;
     float enemy_position_x = 100.f, enemy_position_y = 500.f;
+    bool isDying = false;
+    bool deathAnimationPlayed = false;
+    int deathFrame = 0;
+    sf::Clock deathClock;
+    float deathFrameDuration = 0.1f; // Adjust as needed
 
+
+    bool playDeathAnimation = false;
     int idleStage = 0;
     int currentFrame = 0;
     int numIdle1Frames = 4;

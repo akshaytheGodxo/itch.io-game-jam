@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "StateManager.h"
+#include "NPC.h"
 class Game
 {
 public:
@@ -29,8 +30,10 @@ private:
 	Player player;
 	StateManager state;
 	Enemy enemy;
+	NPC npc;
 	char characterState[1];
 	char gameState[1];
+	bool enemyDeadTriggered = false;
 	void processEvents();
 	void update();
 	void render();

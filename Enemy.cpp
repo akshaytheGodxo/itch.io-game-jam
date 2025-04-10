@@ -39,14 +39,22 @@ void Enemy::handleIdle() {
 
 
 void Enemy::handleDead() {
-    int row = 0;
-    if (clock.getElapsedTime().asSeconds() > frameDuration) {
-        currentFrame = (currentFrame + 1) % numDeathFrames;
-        enemySprite.setTextureRect(sf::IntRect(currentFrame * frameWidth, row * frameHeight, frameWidth, frameHeight));
-        enemySprite.setPosition(enemy_position_x, enemy_position_y);
-        clock.restart();
+    if (deathAnimationPlayed) return;
+
+    if (deathClock.getElapsedTime().asSeconds() > deathFrameDuration) {
+        enemySprite.setTexture(enemyDeadTexture);
+        enemySprite.setTextureRect(sf::IntRect(deathFrame * frameWidth, 0, frameWidth, frameHeight));
+        deathFrame++;
+
+        if (deathFrame >= numDeathFrames) {
+            deathAnimationPlayed = true;
+        }
+
+        deathClock.restart();
     }
 }
+
+
 
 void Enemy::displayMessage() {
     if (setMessage) {
@@ -58,29 +66,33 @@ void Enemy::displayMessage() {
     }
 }
 void Enemy::takeDamage(int amount) {
-	enemyHealth -= amount;
+    enemyHealth -= amount;
     std::cout << enemyHealth << std::endl;
-	if (enemyHealth <= 0) {
+
+    if (enemyHealth <= 0 && !isDying) {
         enemyHealth = 0;
         setMessage = true;
-	}
+        isDying = true;
+        isAlive = false;
+        deathFrame = 0;
+        deathClock.restart();
+    }
 }
 
 int Enemy::getHealth() const {
 	return enemyHealth;
 }
 
-void Enemy::update(char currentState) {
-    
+void Enemy::update() {
     if (isAlive) {
         handleIdle();
-    } 
-
-    else if (!isAlive && currentState == static_cast<char>('k')){
-		enemySprite.setTexture(enemyDeadTexture);
+    }
+    else if (!deathAnimationPlayed) {
+        enemySprite.setTexture(enemyDeadTexture);
         handleDead();
     }
 }
+
 
 sf::FloatRect Enemy::getBounds() const {
     return enemySprite.getGlobalBounds();
