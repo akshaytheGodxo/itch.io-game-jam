@@ -139,9 +139,6 @@ void Game::update() {
 	player.update(characterState[1]);
 	enemy.update();
 	npc.update();
-
-	
-
 }
 
 void Game::renderMenu() {
